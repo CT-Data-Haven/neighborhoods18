@@ -1,0 +1,29 @@
+.VizContainer {
+
+}
+
+.VizContainer .nav.nav-pills {
+  margin: -0.2em 0 0.5em 0;
+}
+
+.VizContainer span.nav-icon {
+  margin-right: 0.3em;
+}
+
+.VizContainer .nav.nav-pills .nav-item > a {
+  color: #61605B;
+  background-color: white;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+}
+
+.VizContainer .nav.nav-pills .nav-item > a:hover {
+  border-color: #ede6db;
+  background-color: #F8F5F0;
+}
+
+.VizContainer .nav.nav-pills .nav-link.active {
+  border-color: #625c50;
+  border-width: 0;
+  border-bottom-width: 3px;
+}

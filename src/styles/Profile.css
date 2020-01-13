@@ -1,0 +1,23 @@
+.Profile {
+
+}
+
+.Profile table {
+  font-size: 1.1rem;
+}
+
+.Profile table tr td:first-of-type {
+  font-weight: 500;
+}
+
+.Profile table thead {
+  display: none;
+}
+
+.Profile table tr.nudge-td td:last-of-type {
+  /* padding-right: 1.25em; */
+}
+
+.Profile table tr.percent td:last-of-type {
+
+}

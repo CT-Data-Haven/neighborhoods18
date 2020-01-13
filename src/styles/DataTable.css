@@ -1,0 +1,44 @@
+.DataTable {
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.DataTable thead th {
+  font-weight: 600;
+}
+
+.DataTable table {
+  margin: 0;
+}
+
+.DataTable table tr td:first-of-type {
+  font-weight: 500;
+}
+
+.DataTable table.row-hover tr {
+  cursor: pointer;
+}
+
+.DataTable table tr.row-no-hover {
+  cursor: default;
+}
+
+.DataTable table tr.table-active {
+  /* background-color: #3092d71f; */
+}
+
+.DataTable th.sortable span {
+  font-size: 0.9rem;
+}
+
+.DataTable .react-bootstrap-table th .order-4::after,
+.DataTable .react-bootstrap-table th .caret-4-asc::after,
+.DataTable .react-bootstrap-table th .caret-4-desc::after {
+  content: '\25Bc';
+}
+
+.DataTable .react-bootstrap-table th .order-4::before,
+.DataTable .react-bootstrap-table th .caret-4-asc::before,
+.DataTable .react-bootstrap-table th .caret-4-desc::before {
+  content: '\25B2';
+}

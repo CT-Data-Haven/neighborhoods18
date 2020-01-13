@@ -1,14 +1,30 @@
 {
   "name": "neighborhoods18",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "homepage": "https://ct-data-haven.github.io/neighborhoods18",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.4.0",
     "@testing-library/user-event": "^7.2.1",
+    "@vx/legend": "0.0.193-alpha.1",
+    "bootstrap": "^4.4.1",
+    "d3-scale": "^3.2.1",
+    "d3-scale-chromatic": "^1.5.0",
+    "leaflet": "^1.6.0",
+    "lodash": "^4.17.15",
     "react": "^16.12.0",
+    "react-bootstrap": "^1.0.0-beta.16",
+    "react-bootstrap-table-next": "^3.3.3",
     "react-dom": "^16.12.0",
-    "react-scripts": "3.3.0"
+    "react-hook-form": "^4.4.2",
+    "react-icons": "^3.8.0",
+    "react-leaflet": "^2.6.1",
+    "react-scripts": "3.3.0",
+    "semiotic": "^1.20.4",
+    "simple-statistics": "^7.0.7",
+    "topojson-client": "^3.1.0",
+    "wordwrapjs": "^4.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
