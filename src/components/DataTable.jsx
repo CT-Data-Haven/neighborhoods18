@@ -27,9 +27,11 @@ const DataTable = (props) => {
     <div className='DataTable' id='datatable'>
       <BootstrapTable
         bootstrap4
-        classes='table-responsive-xl row-hover'
+        classes='row-hover'
         hover
+        condensed
         headerClasses='thead-light'
+        wrapperClasses='table-responsive-xl'
         bordered={ true }
         keyField={ 'location' }
         data={ data }

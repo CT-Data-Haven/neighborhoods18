@@ -6,9 +6,6 @@
   font-size: 1.1rem;
 }
 
-.Profile table tr td:first-of-type {
-  font-weight: 500;
-}
 
 .Profile table thead {
   display: none;
@@ -20,4 +17,8 @@
 
 .Profile table tr.percent td:last-of-type {
 
+}
+
+.Profile td.width-30 {
+  /* width: 30%; */
 }

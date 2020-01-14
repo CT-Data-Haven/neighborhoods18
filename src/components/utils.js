@@ -38,6 +38,7 @@ const tblColumns = (meta, names, omit = null, sort = false) => {
       formatter: (isNumber ? fmt(col.format) : null),
       type: (isNumber ? 'number' : 'string'),
       align: (isNumber ? 'right' : 'left'),
+      classes: (isNumber ? '' : 'table-header-col'),
       sort
     };
   });

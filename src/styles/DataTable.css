@@ -1,6 +1,13 @@
 .DataTable {
   max-height: 600px;
   overflow-y: auto;
+  font-size: 1.0rem;
+}
+
+.DataTable div.table-responsive > table.table,
+.DataTable div.table-responsive-lg > table.table,
+.DataTable div.table-responsive-xl > table.table {
+  table-layout: auto;
 }
 
 .DataTable thead th {
@@ -12,6 +19,9 @@
 }
 
 .DataTable table tr td:first-of-type {
+  /* font-weight: 500; */
+}
+.DataTable table tr td.table-header-col {
   font-weight: 500;
 }
 

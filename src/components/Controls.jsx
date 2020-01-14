@@ -12,7 +12,7 @@ const Controls = (props) => {
     <div className='Controls'>
       <Form>
         <Row>
-          <Col>
+          <Col lg={ 4 } md={ 6 }>
             <Form.Group controlId='cSelect'>
               <Form.Label>Select a city</Form.Label>
               <Form.Control as='select' name='cSelect' className='custom-select' ref={ register } onChange={ props.onChange }>
@@ -23,7 +23,10 @@ const Controls = (props) => {
             </Form.Group>
           </Col>
 
-          <Col>
+          { /* spacer */ }
+          <Col lg={ 4 } md={ 6 } className='d-lg-none'></Col>
+
+          <Col lg={ 4 } md={ 6 }>
             <Form.Group controlId='tSelect'>
               <Form.Label>Select a topic</Form.Label>
               <Form.Control as='select' name='tSelect' className='custom-select' ref={ register } onChange={ props.onChange }>
@@ -34,7 +37,7 @@ const Controls = (props) => {
             </Form.Group>
           </Col>
 
-          <Col>
+          <Col lg={ 4 } md={ 6 }>
             <Form.Group controlId='iSelect'>
               <Form.Label>Select an indicator</Form.Label>
               <Form.Control as='select' name='iSelect' className='custom-select' ref={ register } onChange={ props.onChange }>

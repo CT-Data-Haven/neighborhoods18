@@ -16,12 +16,10 @@ const Profile = (props) => {
   const cols = [{
     dataField: 'indicator',
     text: 'Indicator',
-    headerStyle: () => ({ width: '70%' }),
-    classes: ''
+    classes: 'table-header-col'
   }, {
     dataField: 'value',
     text: 'Value',
-    headerstyle: () => ({ width: '30%' }),
     align: 'right',
     classes: 'text-right'
   }];
@@ -31,13 +29,14 @@ const Profile = (props) => {
     <div className='Profile DataTable' id='profile'>
       <BootstrapTable
         bootstrap4
-        classes='table table-responsive-sm'
+        classes='table'
         headerClasses='thead-light'
         bordered={ false }
         keyField={ 'indicator' }
         data={ data }
         columns={ cols }
         rowClasses={ opticAdj }
+        wrapperClasses='table-responsive'
       />
     </div>
   )
