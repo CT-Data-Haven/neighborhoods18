@@ -1,10 +1,24 @@
 .Chart {
   font-family: 'Barlow Semi Condensed';
+  min-height: 400px;
+  min-width: 300px;
 }
+
+.Chart div.responsive-container {
+  min-height: 400px !important;
+}
+
+.Chart.Choropleth {
+  /* min-width: 300px; */
+  width: 100%;
+
+}
+
 
 .Chart .leaflet-container {
   width: 100%;
-  height: 400px;
+  min-height: 500px;
+  margin: 0 auto;
 }
 
 .Chart .custom-tip {
@@ -12,7 +26,7 @@
   color: white;
   border-color: #333;
   opacity: 0.85;
-  font-size: 0.85em;
+  font-size: 0.95em;
   font-family: 'Barlow Semi Condensed';
   padding: 3px;
   font-weight: 600;
@@ -40,7 +54,7 @@
 }
 
 .Chart .axis-label text, .Chart .ordinal-labels text {
-  font-size: 1.1rem;
+  /* font-size: 1.0rem; */
 }
 
 .Chart .axis-title text {
@@ -48,7 +62,7 @@
 }
 
 .Chart g.direct-label text {
-  font-size: 1rem;
+  font-size: 0.9em;
   font-weight: 700;
   text-anchor: end;
   /* fill: white; */

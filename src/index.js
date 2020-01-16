@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import './styles/bootstrap.min.css';
+import 'leaflet/dist/leaflet.css';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 

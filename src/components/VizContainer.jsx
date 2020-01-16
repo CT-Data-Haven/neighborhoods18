@@ -1,29 +1,31 @@
 import React from 'react';
-import { Tab, Nav } from 'react-bootstrap';
+import { Nav } from 'react-bootstrap';
+import Tabs from 'react-responsive-tabs';
 
+import 'react-responsive-tabs/styles.css';
 import '../styles/VizContainer.css';
 
+const makeTitle = (d, t) => (
+  <div><span className='nav-icon'>{ t[d.key].icon }</span>{ t[d.key].title }</div>
+);
+
 const VizContainer = (props) => {
+  const tabs = props.children.map((d, i) => ({
+    title: makeTitle(d, props.tabs),
+    key: d.key,
+    getContent: () => d
+  }));
   return (
     <div className='VizContainer'>
-      <Tab.Container defaultActiveKey='map'>
-        <Nav variant='pills'>
-          { props.children.map((d, i) => (
-            <Nav.Item key={ `${ d.key }-tab-nav` }>
-              <Nav.Link eventKey={ d.key }><span className='nav-icon'>{ props.tabs[d.key].icon }</span>  { props.tabs[d.key].title }</Nav.Link>
-            </Nav.Item>
-          )) }
-        </Nav>
-        <Tab.Content>
-          { props.children.map((d, i) => (
-            <Tab.Pane key={ `${ d.key }-tab-pane` } eventKey={ d.key }>
-              { d }
-            </Tab.Pane>
-          )) }
-        </Tab.Content>
-      </Tab.Container>
+      <Tabs
+        items={ tabs }
+        transform={ false }
+        showMore={ false }
+        tabClassName='viz-tab-nav'
+        panelClassName='viz-tab-panel'
+      />
     </div>
-  );
-};
+  )
+}
 
 export default VizContainer;

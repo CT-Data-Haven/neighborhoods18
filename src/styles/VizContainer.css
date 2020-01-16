@@ -1,29 +1,37 @@
 .VizContainer {
-
+  min-height: 460px;
+  min-width: 300px;
 }
 
-.VizContainer .nav.nav-pills {
-  margin: -0.2em 0 0.5em 0;
-}
 
 .VizContainer span.nav-icon {
   margin-right: 0.3em;
 }
 
-.VizContainer .nav.nav-pills .nav-item > a {
+.VizContainer div.RRT__panel {
+  border-width: 0;
+  min-width: 300px;
+}
+
+.VizContainer div.RRT__tab {
+  /* margin: -0.2em 0 0.5em 0; */
   color: #61605B;
   background-color: white;
   padding-top: 0.2em;
-  padding-bottom: 0.2em;
+  padding-bottom: 0.3em;
+  border-width: 0;
 }
 
-.VizContainer .nav.nav-pills .nav-item > a:hover {
+.VizContainer div.RRT__tab:hover {
   border-color: #ede6db;
   background-color: #F8F5F0;
 }
 
-.VizContainer .nav.nav-pills .nav-link.active {
+.VizContainer div.RRT__tab--selected {
+  color: #625c50;
+  font-weight: 500;
   border-color: #625c50;
   border-width: 0;
   border-bottom-width: 3px;
+  border-radius: 2px;
 }

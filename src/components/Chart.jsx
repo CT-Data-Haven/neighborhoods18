@@ -20,7 +20,9 @@ const Chart = (props) => {
   return (
     <div className='Chart'>
       <ResponsiveOrdinalFrame
+        gridDisplay={ true }
         data={ props.data }
+        size={ [500, 500] }
         margin={ { top: 10, right: 10, bottom: 10, left: 160 } }
         oAccessor={ props.oAccess }
         rAccessor={ props.rAccess }
@@ -29,6 +31,7 @@ const Chart = (props) => {
         oLabel={ true }
         projection='horizontal'
         responsiveWidth={ true }
+        responsiveHeight={ false }
         style={ (d) => ({
           fill: colorNhood(d, props.nhood, props.colorscale, props.accent),
           stroke: 'white',

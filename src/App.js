@@ -79,6 +79,7 @@ const App = () => {
 
   return (
     <div className='App'>
+
       <Container>
         <header className='app-header'>
           <h1>Connecticut Neighborhood Profiles</h1>
@@ -107,6 +108,7 @@ const App = () => {
 
         <hr />
 
+
         { /* VIZ */ }
         <Row>
           <Col md={ 7 }>
@@ -115,34 +117,36 @@ const App = () => {
               lbl={ displayIndicator(topicMeta['indicators'], indicator) }
               type='short'
             >
-              <VizContainer
-                tabs={{
-                  map: { title: 'Show map', icon: <FaGlobeAmericas /> },
-                  chart: { title: 'Show chart', icon: <FaChartBar /> }
-                }}
-              >
-                <Choropleth
-                  key='map'
-                  data={ mapData }
-                  shape={ shapes[city] }
-                  city={ city }
-                  colorscale={ makeChoroScale(mapData, palette, 6) }
-                  onClick={ featureClick }
-                  meta={ filterByKey(topicMeta['indicators'], 'indicator', indicator) }
-                />
-                <Chart
-                  key='chart'
-                  data={ barData }
-                  oAccess={ 'location' }
-                  rAccess={ indicator }
-                  colorscale={ makeBarScale(barData, grays) }
-                  onClick={ barClick }
-                  meta={ filterByKey(topicMeta['indicators'], 'indicator', indicator) }
-                  accent={ palette[6][5] }
-                  nhood={ nhood }
-                />
-              </VizContainer>
-            </ChartStage>
+            <VizContainer
+              tabs={{
+                map: { title: 'Show map', icon: <FaGlobeAmericas /> },
+                chart: { title: 'Show chart', icon: <FaChartBar /> }
+              }}
+            >
+              <Chart
+                key='chart'
+                data={ barData }
+                oAccess={ 'location' }
+                rAccess={ indicator }
+                colorscale={ makeBarScale(barData, grays) }
+                onClick={ barClick }
+                meta={ filterByKey(topicMeta['indicators'], 'indicator', indicator) }
+                accent={ palette[6][5] }
+                nhood={ nhood }
+              />
+              <Choropleth
+                key='map'
+                data={ mapData }
+                shape={ shapes[city] }
+                city={ city }
+                colorscale={ makeChoroScale(mapData, palette, 6) }
+                onClick={ featureClick }
+                meta={ filterByKey(topicMeta['indicators'], 'indicator', indicator) }
+              />
+
+            </VizContainer>
+          </ChartStage>
+
           </Col>
 
           { /* PROFILE */ }
@@ -179,6 +183,8 @@ const App = () => {
             </TableStage>
           </Col>
         </Row>
+
+        <hr />
 
         { /* FOOTER ROW */ }
         <Row>

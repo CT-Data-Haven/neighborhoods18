@@ -3,7 +3,7 @@ import { Map, TileLayer, GeoJSON, LayerGroup } from 'react-leaflet';
 import { getBounds, makeGeoLayers, makeTooltip } from './utils.js';
 
 import Legend from './Legend';
-import 'leaflet/dist/leaflet.css';
+
 
 import '../styles/Chart.css';
 
@@ -58,12 +58,13 @@ export default class Choropleth extends React.Component {
 	render() {
 		const bbox = getBounds(this.props.shape);
 	  const layers = makeGeoLayers(this.props.shape);
+		console.log(bbox);
 		return (
 	    <div className='Chart Choropleth'>
 	      <Map
 	        key={ this.props.city }
 	        bounds={ bbox }
-	        zoomSnap={ 0.5 }
+	        // zoomSnap={ 0.5 }
 	        zoomDelta={ 0.5 }
 	        scrollWheelZoom={ false }
 	      >
