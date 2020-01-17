@@ -20,7 +20,13 @@ import './App.css';
 import meta from './data/nhood_meta_2018.json';
 import data from './data/nhood_wide_2018.json';
 import sources from './data/sources.json';
-import shapes from './shapes/cities_topo_list.json';
+// import shapes from './shapes/cities_topo_layers.json';
+const shapes = {
+  new_haven: require('./shapes/new_haven_topo.json'),
+  bridgeport: require('./shapes/bridgeport_topo.json'),
+  hartford: require('./shapes/hartford_topo.json'),
+  stamford: require('./shapes/stamford_topo.json')
+};
 
 const App = () => {
   const formMethods = useForm({
@@ -117,27 +123,27 @@ const App = () => {
               lbl={ displayIndicator(topicMeta['indicators'], indicator) }
               type='short'
             >
-            <VizContainer
-              tabs={{
-                map: { title: 'Show map', icon: <FaGlobeAmericas /> },
-                chart: { title: 'Show chart', icon: <FaChartBar /> }
-              }}
-            >
-              <Chart
-                key='chart'
-                data={ barData }
-                oAccess={ 'location' }
-                rAccess={ indicator }
-                colorscale={ makeBarScale(barData, grays) }
-                onClick={ barClick }
-                meta={ filterByKey(topicMeta['indicators'], 'indicator', indicator) }
-                accent={ palette[6][5] }
-                nhood={ nhood }
-              />
-              <Choropleth
-                key='map'
-                data={ mapData }
-                shape={ shapes[city] }
+              <VizContainer
+                tabs={{
+                  map: { title: 'Show map', icon: <FaGlobeAmericas /> },
+                  chart: { title: 'Show chart', icon: <FaChartBar /> }
+                }}
+              >
+                <Chart
+                  key='chart'
+                  data={ barData }
+                  oAccess={ 'location' }
+                  rAccess={ indicator }
+                  colorscale={ makeBarScale(barData, grays) }
+                  onClick={ barClick }
+                  meta={ filterByKey(topicMeta['indicators'], 'indicator', indicator) }
+                  accent={ palette[6][5] }
+                  nhood={ nhood }
+                />
+                <Choropleth
+                  key='map'
+                  data={ mapData }
+                  shape={ shapes[city] }
                 city={ city }
                 colorscale={ makeChoroScale(mapData, palette, 6) }
                 onClick={ featureClick }

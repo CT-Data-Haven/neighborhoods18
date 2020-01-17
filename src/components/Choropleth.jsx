@@ -58,13 +58,12 @@ export default class Choropleth extends React.Component {
 	render() {
 		const bbox = getBounds(this.props.shape);
 	  const layers = makeGeoLayers(this.props.shape);
-		console.log(bbox);
 		return (
 	    <div className='Chart Choropleth'>
 	      <Map
 	        key={ this.props.city }
 	        bounds={ bbox }
-	        // zoomSnap={ 0.5 }
+	        zoomSnap={ 0.5 }
 	        zoomDelta={ 0.5 }
 	        scrollWheelZoom={ false }
 	      >
@@ -72,8 +71,8 @@ export default class Choropleth extends React.Component {
 	          url="https://stamen-tiles-{s}.a.ssl.fastly.net/toner-background/{z}/{x}/{y}.{ ext }"
 	          attribution='Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 	          subdomains="abcd"
-	          minZoom={ 11 }
-	          maxZoom={ 20 }
+	          minZoom={ 10 }
+	          maxZoom={ 18 }
 	          ext="png"
 	          opacity={ 0.4 }
 	        />
@@ -84,13 +83,13 @@ export default class Choropleth extends React.Component {
 	            style={ this.getStyle }
 	            onClick={ this.props.onClick }
 	            onEachFeature={ this.handleFeature }
-	          />
-	          <GeoJSON
+						/>
+						<GeoJSON
 	            data={ layers.mesh }
 	            style={ cityStyle }
 	            interactive={ false }
-	          />
-	          <GeoJSON
+						/>
+						<GeoJSON
 	            data={ layers.merge }
 	            style={ cityStyle }
 	            interactive={ false }
