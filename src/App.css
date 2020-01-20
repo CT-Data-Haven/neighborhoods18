@@ -26,3 +26,13 @@
 .App hr {
   margin: 0.6em 2em 1em 2em;
 }
+
+.App .alert-light a:not(.btn) {
+  color: #088b9d;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.App .alert-light a:not(.btn):hover {
+  text-decoration: underline;
+}

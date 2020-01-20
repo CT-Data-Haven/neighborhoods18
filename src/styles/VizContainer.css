@@ -28,9 +28,11 @@
 }
 
 .VizContainer div.RRT__tab--selected {
-  color: #625c50;
-  font-weight: 500;
-  border-color: #625c50;
+  /* color: #625c50; */
+  color: #088b9d;
+  font-weight: 600;
+  /* border-color: #625c50; */
+  border-color: #088b9d;
   border-width: 0;
   border-bottom-width: 3px;
   border-radius: 2px;

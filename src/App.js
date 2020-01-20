@@ -144,14 +144,14 @@ const App = () => {
                   key='map'
                   data={ mapData }
                   shape={ shapes[city] }
-                city={ city }
-                colorscale={ makeChoroScale(mapData, palette, 6) }
-                onClick={ featureClick }
-                meta={ filterByKey(topicMeta['indicators'], 'indicator', indicator) }
-              />
+                  city={ city }
+                  colorscale={ makeChoroScale(mapData, palette, 6) }
+                  onClick={ featureClick }
+                  meta={ filterByKey(topicMeta['indicators'], 'indicator', indicator) }
+                />
 
-            </VizContainer>
-          </ChartStage>
+              </VizContainer>
+            </ChartStage>
 
           </Col>
 
@@ -160,7 +160,7 @@ const App = () => {
             <TableStage
               location={ nhood }
               lbl={ topicMeta.display }
-              type='short'
+              type='profile'
             >
               <Profile
                 data={ getProfile(data[city][topic], nhood, topicMeta.indicators) }

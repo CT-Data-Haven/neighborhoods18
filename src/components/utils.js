@@ -48,7 +48,8 @@ const tblColumns = (meta, names, omit = null, sort = false) => {
 const compileHeader = (type) => {
   const headers = {
     long: '<%= lbl %> by <%= dataBy %>, <%= location %>',
-    short: '<%= lbl %>, <%= location %>'
+    short: '<%= lbl %>, <%= location %>',
+    profile: '<%= lbl %> at a glance, <%= location %>'
   };
   return _.template(headers[type]);
 };
