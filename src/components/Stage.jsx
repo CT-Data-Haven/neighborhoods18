@@ -24,6 +24,7 @@ const ChartStage = (props) => (
     <Stage
       // lbls={ props.lbls.map((d) => d || makeTitle(d)) }
       type={ props.type || 'long' }
+      dataBy={ props.dataBy || 'neighborhood' }
       { ...props }
     />
   </div>

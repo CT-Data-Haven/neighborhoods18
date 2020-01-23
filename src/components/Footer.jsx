@@ -7,7 +7,7 @@ import '../styles/Footer.css';
 
 import src from '../img/logo.png';
 
-const text = 'Source: DataHaven analysis (2019) of'
+const text = 'Source: DataHaven analysis (2019) of';
 
 const Footer = (props) => (
   <div className='Footer'>

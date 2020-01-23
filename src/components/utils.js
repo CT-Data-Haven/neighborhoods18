@@ -156,8 +156,9 @@ const makeTooltip = (data, name, meta) => {
 };
 
 const makeDownloads = (city, year = 2018) => ({
-  gh: `https://github.com/CT-Data-Haven/nhood_profile_data/blob/master/to_distribute/${ year }_${ city }_profile_distr.csv`,
-  dw: `https://fakedataworld.com/${ city }`
+  gh: `https://github.com/CT-Data-Haven/2018acs/blob/master/to_distro/${ city }_acs_basic_neighborhood_${ year }.csv`,
+  dw: `https://data.world/camille86/neighborhoods18/workspace/file?filename=${ city }_acs_basic_neighborhood_${ year }.csv`,
+  dl: `https://raw.githubusercontent.com/CT-Data-Haven/2018acs/master/to_distro/${ city }_acs_basic_neighborhood_${ year }.csv`
 });
 
 

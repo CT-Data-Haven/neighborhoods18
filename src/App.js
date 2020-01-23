@@ -121,7 +121,7 @@ const App = () => {
             <ChartStage
               location={ makeTitle(city, false) }
               lbl={ displayIndicator(topicMeta['indicators'], indicator) }
-              type='short'
+              type='long'
             >
               <VizContainer
                 tabs={{
