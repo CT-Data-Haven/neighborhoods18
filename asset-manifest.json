@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/neighborhoods18/static/css/main.6b4a7bb8.chunk.css",
-    "main.js": "/neighborhoods18/static/js/main.e6e162e0.chunk.js",
-    "main.js.map": "/neighborhoods18/static/js/main.e6e162e0.chunk.js.map",
+    "main.css": "/neighborhoods18/static/css/main.5f7be891.chunk.css",
+    "main.js": "/neighborhoods18/static/js/main.cc4eb663.chunk.js",
+    "main.js.map": "/neighborhoods18/static/js/main.cc4eb663.chunk.js.map",
     "runtime-main.js": "/neighborhoods18/static/js/runtime-main.87d053c8.js",
     "runtime-main.js.map": "/neighborhoods18/static/js/runtime-main.87d053c8.js.map",
-    "static/css/2.238840d5.chunk.css": "/neighborhoods18/static/css/2.238840d5.chunk.css",
-    "static/js/2.28663ad8.chunk.js": "/neighborhoods18/static/js/2.28663ad8.chunk.js",
-    "static/js/2.28663ad8.chunk.js.map": "/neighborhoods18/static/js/2.28663ad8.chunk.js.map",
+    "static/css/2.5ee9c1b8.chunk.css": "/neighborhoods18/static/css/2.5ee9c1b8.chunk.css",
+    "static/js/2.24176df7.chunk.js": "/neighborhoods18/static/js/2.24176df7.chunk.js",
+    "static/js/2.24176df7.chunk.js.map": "/neighborhoods18/static/js/2.24176df7.chunk.js.map",
     "index.html": "/neighborhoods18/index.html",
-    "precache-manifest.cde42082671a084399fd1411eb8a25ae.js": "/neighborhoods18/precache-manifest.cde42082671a084399fd1411eb8a25ae.js",
+    "precache-manifest.05582759bcf905c446d5fcb5570755f0.js": "/neighborhoods18/precache-manifest.05582759bcf905c446d5fcb5570755f0.js",
     "service-worker.js": "/neighborhoods18/service-worker.js",
-    "static/css/2.238840d5.chunk.css.map": "/neighborhoods18/static/css/2.238840d5.chunk.css.map",
-    "static/css/main.6b4a7bb8.chunk.css.map": "/neighborhoods18/static/css/main.6b4a7bb8.chunk.css.map",
-    "static/js/2.28663ad8.chunk.js.LICENSE": "/neighborhoods18/static/js/2.28663ad8.chunk.js.LICENSE",
+    "static/css/2.5ee9c1b8.chunk.css.map": "/neighborhoods18/static/css/2.5ee9c1b8.chunk.css.map",
+    "static/css/main.5f7be891.chunk.css.map": "/neighborhoods18/static/css/main.5f7be891.chunk.css.map",
+    "static/js/2.24176df7.chunk.js.LICENSE": "/neighborhoods18/static/js/2.24176df7.chunk.js.LICENSE",
     "static/media/logo.png": "/neighborhoods18/static/media/logo.9144a510.png"
   },
   "entrypoints": [
     "static/js/runtime-main.87d053c8.js",
-    "static/css/2.238840d5.chunk.css",
-    "static/js/2.28663ad8.chunk.js",
-    "static/css/main.6b4a7bb8.chunk.css",
-    "static/js/main.e6e162e0.chunk.js"
+    "static/css/2.5ee9c1b8.chunk.css",
+    "static/js/2.24176df7.chunk.js",
+    "static/css/main.5f7be891.chunk.css",
+    "static/js/main.cc4eb663.chunk.js"
   ]
 }
