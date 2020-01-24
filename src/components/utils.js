@@ -155,10 +155,11 @@ const makeTooltip = (data, name, meta) => {
   return `${ name }: ${ fmt(meta.format)(val) }`;
 };
 
-const makeDownloads = (city, year = 2018) => ({
+const makeDownloads = (id, city, year = 2018) => ({
   gh: `https://github.com/CT-Data-Haven/2018acs/blob/master/to_distro/${ city }_acs_basic_neighborhood_${ year }.csv`,
-  dw: `https://data.world/camille86/neighborhoods18/workspace/file?filename=${ city }_acs_basic_neighborhood_${ year }.csv`,
-  dl: `https://raw.githubusercontent.com/CT-Data-Haven/2018acs/master/to_distro/${ city }_acs_basic_neighborhood_${ year }.csv`
+  dw: 'https://data.world/camille86/neighborhoods18',
+  // dl: `https://raw.githubusercontent.com/CT-Data-Haven/2018acs/master/to_distro/${ city }_acs_basic_neighborhood_${ year }.csv`
+  dl: `https://query.data.world/s/${ id }`
 });
 
 

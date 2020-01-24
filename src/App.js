@@ -13,13 +13,13 @@ import VizContainer from './components/VizContainer';
 import Choropleth from './components/Choropleth';
 import Chart from './components/Chart';
 import Footer from './components/Footer';
-import { getMappable, makeTitle, displayIndicator, getNhoods, getProfile, makeMapData, makeBarData, makeChoroScale, makeBarScale, filterByKey } from './components/utils.js';
+import { cityDisplay, getMappable, makeTitle, displayIndicator, getNhoods, getProfile, makeMapData, makeBarData, makeChoroScale, makeBarScale, filterByKey } from './components/utils.js';
 
 import './App.css';
 
 import meta from './data/nhood_meta_2018.json';
 import data from './data/nhood_wide_2018.json';
-import sources from './data/sources.json';
+import sources from './data/sources_meta.json';
 // import shapes from './shapes/cities_topo_layers.json';
 const shapes = {
   new_haven: require('./shapes/new_haven_topo.json'),
@@ -119,7 +119,7 @@ const App = () => {
         <Row>
           <Col md={ 7 }>
             <ChartStage
-              location={ makeTitle(city, false) }
+              location={ cityDisplay[city] }
               lbl={ displayIndicator(topicMeta['indicators'], indicator) }
               type='long'
             >
@@ -175,7 +175,7 @@ const App = () => {
         <Row>
           <Col>
             <TableStage
-              location={ makeTitle(city, false) }
+              location={ cityDisplay[city] }
               lbl={ topicMeta.display }
               type='long'
             >
@@ -195,7 +195,7 @@ const App = () => {
         { /* FOOTER ROW */ }
         <Row>
           <Col>
-            <Footer sources={ sources } city={ city } />
+            <Footer sources={ sources.sources } dwId={ sources.dwurls[city] } city={ city } />
           </Col>
         </Row>
       </Container>

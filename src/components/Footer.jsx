@@ -14,7 +14,7 @@ const Footer = (props) => (
     <Alert variant='light'>
       <Alert.Heading>Download this data</Alert.Heading>
 
-      <Download { ...makeDownloads(props.city, 2018) } />
+      <Download city={ props.city } { ...makeDownloads(props.dwId, props.city, 2018) } />
       {/* </Alert> */}
       <hr />
       {/* <Alert variant='light'> */}
