@@ -137,7 +137,7 @@ const App = () => {
                   colorscale={ makeBarScale(barData, grays) }
                   onClick={ barClick }
                   meta={ filterByKey(topicMeta['indicators'], 'indicator', indicator) }
-                  accent={ palette[6][5] }
+                  accent={ palette[5][4] }
                   nhood={ nhood }
                 />
                 <Choropleth
@@ -145,7 +145,7 @@ const App = () => {
                   data={ mapData }
                   shape={ shapes[city] }
                   city={ city }
-                  colorscale={ makeChoroScale(mapData, palette, 6) }
+                  colorscale={ makeChoroScale(mapData, palette, 5) }
                   onClick={ featureClick }
                   meta={ filterByKey(topicMeta['indicators'], 'indicator', indicator) }
                 />

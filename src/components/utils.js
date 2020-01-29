@@ -156,7 +156,7 @@ const makeTooltip = (data, name, meta) => {
 };
 
 const makeDownloads = (id, city, year = 2018) => ({
-  gh: `https://github.com/CT-Data-Haven/2018acs/blob/master/to_distro/${ city }_acs_basic_neighborhood_${ year }.csv`,
+  gh: `https://github.com/CT-Data-Haven/nhood_profile_data18/blob/master/to_distro/${ city }_nhood_${ year }_acs_health_comb.csv`,
   dw: 'https://data.world/camille86/neighborhoods18',
   // dl: `https://raw.githubusercontent.com/CT-Data-Haven/2018acs/master/to_distro/${ city }_acs_basic_neighborhood_${ year }.csv`
   dl: `https://query.data.world/s/${ id }`
