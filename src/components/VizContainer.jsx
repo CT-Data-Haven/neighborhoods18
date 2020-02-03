@@ -1,5 +1,4 @@
 import React from 'react';
-import { Nav } from 'react-bootstrap';
 import Tabs from 'react-responsive-tabs';
 
 import 'react-responsive-tabs/styles.css';

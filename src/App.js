@@ -13,7 +13,8 @@ import VizContainer from './components/VizContainer';
 import Choropleth from './components/Choropleth';
 import Chart from './components/Chart';
 import Footer from './components/Footer';
-import { cityDisplay, getMappable, makeTitle, displayIndicator, getNhoods, getProfile, makeMapData, makeBarData, makeChoroScale, makeBarScale, filterByKey } from './components/utils.js';
+import { cityDisplay, getMappable, displayIndicator, getNhoods, getProfile, makeMapData, makeBarData, makeChoroScale, makeBarScale, filterByKey } from './components/utils.js';
+import { createPdf } from './components/pdf.js';
 
 import './App.css';
 
@@ -195,7 +196,13 @@ const App = () => {
         { /* FOOTER ROW */ }
         <Row>
           <Col>
-            <Footer sources={ sources.sources } dwId={ sources.dwurls[city] } city={ city } />
+            <Footer
+              sources={ sources.sources }
+              dwId={ sources.dwurls[city] }
+              city={ city }
+              nhood={ nhood }
+              createPdf={ () => createPdf(data[city], meta, nhood, city) }
+            />
           </Col>
         </Row>
       </Container>

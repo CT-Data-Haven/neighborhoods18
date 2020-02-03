@@ -1,7 +1,7 @@
 import React from 'react';
 import { Alert } from 'react-bootstrap';
 
-const text = 'Select a topic and indicator to view either a map or a chart. Clicking a neighborhood on the map, chart, or table will bring up detailed information on that neighborhood. See all neighborhoods in the table below.';
+const text = 'Select a topic and indicator to view either a map or a chart. Clicking a neighborhood on the map, chart, or table will bring up detailed information on that neighborhood. See all neighborhoods in the table below, or download data and printable profiles at bottom.';
 
 const Intro = () => (
 	<div className='Intro'>

@@ -12,12 +12,20 @@ const text = 'Source: DataHaven analysis (2019) of';
 const Footer = (props) => (
   <div className='Footer'>
     <Alert variant='light'>
-      <Alert.Heading>Download this data</Alert.Heading>
+      <Alert.Heading as='h2'>Downloads and sources</Alert.Heading>
 
-      <Download city={ props.city } { ...makeDownloads(props.dwId, props.city, 2018) } />
-      {/* </Alert> */}
+      {/* <Alert.Heading></Alert.Heading> */}
+
+      
+      <Download
+        city={ props.city }
+        nhood={ props.nhood }
+        onClick={ props.createPdf }
+        { ...makeDownloads(props.dwId, props.city, 2018) }
+      />
+
       <hr />
-      {/* <Alert variant='light'> */}
+
       <Alert.Heading>{ text }</Alert.Heading>
       <ul>
         { props.sources.map((d, i) => (
