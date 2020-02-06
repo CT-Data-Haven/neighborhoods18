@@ -21,6 +21,7 @@ import './App.css';
 import meta from './data/nhood_meta_2018.json';
 import data from './data/nhood_wide_2018.json';
 import sources from './data/sources_meta.json';
+import geos from './data/geography_meta.json';
 // import shapes from './shapes/cities_topo_layers.json';
 const shapes = {
   new_haven: require('./shapes/new_haven_topo.json'),
@@ -202,6 +203,7 @@ const App = () => {
               city={ city }
               nhood={ nhood }
               createPdf={ () => createPdf(data[city], meta, nhood, city) }
+              geo={ geos[city] }
             />
           </Col>
         </Row>

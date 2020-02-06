@@ -86,7 +86,7 @@ const addTbl = (doc, tbl) => {
   return doc.previousAutoTable.finalY;
 };
 
-const addSrcs = (doc, last_y) => {
+const addSrcs = (doc, startY) => {
   // add sources from sources-div element
   let srcs = [...document.getElementById('sources-ul').children]
     .map((s) => `* ${ s.innerText }`);
@@ -96,11 +96,41 @@ const addSrcs = (doc, last_y) => {
     .map((s) => doc.splitTextToSize(s, 7))
     .flattenDeep()
     .each((d, i) => {
-      const y = last_y + 2 * margin.y + 0.2 * i;
+      // const y = startY + 2 * margin.y + 0.2 * i;
+      const y = startY + margin.y + 0.2 * i;
+      // const y = Math.max(max_y, last_y) + 2 * margin.y + 0.2 * i;
       const txt = (d.charAt(0) !== '*' && i > 0) ? `\t${ d }` : d;
       doc.text(txt, margin.x, y);
     })
     .value();
+};
+
+const addGeo = (doc, startY) => {
+  let geo = [...document.getElementById('geo-div').children]
+    .map((g) => g.innerText);
+  _.chain(geo)
+    .map((g) => doc.splitTextToSize(g, 7))
+    .flattenDeep()
+    .each((d, i) => {
+      const y = startY + margin.y + 0.2 * i;
+      doc.text(d, margin.x, y);
+    })
+    .value();
+};
+
+const addFooter = (doc, pages, width, height) => {
+  const today = new Date();
+  const img_w = 1.43;
+  const img_h = 0.48;
+
+  for (let i = 1; i <= pages; i++) {
+    doc.setPage(i);
+    doc.setFontSize(8);
+    doc.text(`Generated ${ today.toDateString() } at https://www.ctdatahaven.org/data-dashboard`, margin.x, height - margin.y - 0.15);
+    doc.text(`Page ${ i } of ${ pages }`, margin.x, height - margin.y);
+
+    doc.addImage(logo, 'PNG', width - margin.x - img_w, height - margin.y - img_h, img_w, img_h);
+  }
 };
 
 const createPdf = (data, meta, nhood, city) => {
@@ -110,27 +140,32 @@ const createPdf = (data, meta, nhood, city) => {
   doc.autoTableSetDefaults(defaultStyle);
 
   doc.setFontSize(12);
-  doc.text(`2018 DataHaven Neighborhood Profiles: ${ nhood }, ${ _.startCase(city) }`, margin.x, margin.y * 2);
+  doc.text(`2020 DataHaven Neighborhood Profiles: ${ nhood }, ${ _.startCase(city) }`, margin.x, margin.y * 2);
   doc.setFontSize(9);
 
   const tbls = _.keys(filtered)
     .map((topic) => makeTopicTbl(filtered[topic], meta[topic], nhood))
     .map((tbl) => addTbl(doc, tbl));
 
-  const pages = doc.internal.getNumberOfPages();
   const width = doc.internal.pageSize.getWidth();
   const height = doc.internal.pageSize.getHeight();
 
-  for (let i = 1; i <= pages; i++) {
-    doc.setPage(i);
-    doc.setFontSize(8);
-    doc.text(`Page ${ i } of ${ pages } -- Generated at https://www.ctdatahaven.org/data-dashboard`, margin.x, height - margin.y);
-    const img_w = 1.43;
-    const img_h = 0.48;
-    doc.addImage(logo, 'PNG', width - margin.x - img_w, height - margin.y - img_h, img_w, img_h);
+
+
+  // sources take about 3 inches. If at least 3 inches available after last_y, place 3 in above margin. If not, add new page first
+  const src_h = 1.3;
+  const geo_h = 2;
+  if (height - tbls[tbls.length - 1] - margin.y < (src_h + geo_h)) {
+    doc.addPage();
+    addSrcs(doc, margin.y * 1.5);
+    addGeo(doc, margin.y * 1.5 + src_h);
+  } else {
+    addSrcs(doc, height - margin.y - src_h - geo_h);
+    addGeo(doc, height - margin.y - geo_h);
   }
 
-  addSrcs(doc, tbls[tbls.length - 1]);
+
+  addFooter(doc, doc.internal.getNumberOfPages(), width, height);
 
   const city_abbr = city.replace(/[aeiou_]/g, '');
 
